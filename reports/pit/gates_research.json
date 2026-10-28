@@ -1,0 +1,54 @@
+{
+  "G1 net Sharpe >= 0.70": [
+    "FAIL",
+    "Sharpe 0.22, CAGR 0.9%, MaxDD -59.5%"
+  ],
+  "G2 t-stat >= 2.0": [
+    "FAIL",
+    "t = 0.51"
+  ],
+  "G3 DSR(N=100) >= 0.95": [
+    "FAIL",
+    "DSR 0.036 (expected max-of-100 Sharpe under null = 1.02)"
+  ],
+  "G4 PBO <= 0.30": [
+    "FAIL",
+    "PBO 0.45 over 12870 CSCV splits"
+  ],
+  "G5 walk-forward OOS Sharpe >= 0.50": [
+    "FAIL",
+    "WF OOS 2023-01\u21922026-03 Sharpe -0.15"
+  ],
+  "G6 cost stress": [
+    "FAIL",
+    "Sharpe 1x 0.22 / 2x 0.11 / 3x -0.01"
+  ],
+  "G7 +1 day latency keeps >= 60%": [
+    "PASS",
+    "lag0 0.22 -> lag1 0.37 (170%)"
+  ],
+  "G12 capacity ($1M drop <= 0.10)": [
+    "PASS",
+    "$1M Sharpe 0.17"
+  ],
+  "G8 stability": [
+    "FAIL",
+    "best year = 989% of log P&L; positive years 4/6"
+  ],
+  "G9 beats random-name null": [
+    "PASS",
+    "null Sharpe mean -0.78 sd 0.45; p = 0.010"
+  ],
+  "G10 parameter neighbourhood": [
+    "PASS",
+    "neighbours {'lb21_q0.2_u30': 0.17, 'lb42_q0.2_u30': 0.69, 'lb28_q0.1_u30': 0.54, 'lb28_q0.3_u30': 0.32, 'lb28_q0.2_u20': -0.12, 'lb28_q0.2_u50': 0.41} -> 83% >= half of candidate"
+  ],
+  "G13 risk at chosen leverage": [
+    "FAIL",
+    "max leverage with P(1y DD>30%) <= 10%: 0.0x"
+  ],
+  "G14 reproducibility": [
+    "PASS",
+    "max abs diff on re-run 0.0e+00; env pinned in requirements.txt"
+  ]
+}

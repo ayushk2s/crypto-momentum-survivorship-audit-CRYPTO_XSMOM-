@@ -1,0 +1,8 @@
+ORIGINAL LB14 'validated' (old 30 coins, 1 weekday, lag1)
+   research Sharpe 0.98 | HOLDOUT -16.3%  Sharpe -1.28  MaxDD -19.6%
+ORIGINAL BASE LB28 (old 30 coins, 1 weekday, lag1)
+   research Sharpe 0.81 | HOLDOUT -7.6%  Sharpe -0.53  MaxDD -13.6%
+LB14 old-30 with 7 tranches
+   research Sharpe 0.99 | HOLDOUT -9.3%  Sharpe -0.87  MaxDD -12.3%
+post-hoc: PIT + squeeze stop max_drift=2
+   research Sharpe 0.59 | HOLDOUT -13.2%  Sharpe -0.46  MaxDD -36.8%

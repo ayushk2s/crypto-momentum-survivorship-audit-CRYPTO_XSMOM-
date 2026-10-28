@@ -1,0 +1,23 @@
+{
+  "config": {
+    "lookback": 28,
+    "quantile": 0.2,
+    "vol_lookback": 20,
+    "universe_n": 30,
+    "min_history": 60,
+    "rebalance_every": 7,
+    "tranches": 7,
+    "lag": 0,
+    "fee_bps": 5.0,
+    "cost_mult": 1.0,
+    "capital": 100000.0,
+    "impact_coef": 0.7,
+    "use_funding": true,
+    "legs": "both"
+  },
+  "research_end": "2026-03-28",
+  "frozen_at": "2026-10-22T21:45:36.499939",
+  "research_returns_sha256": "090c45f45764253ebd2dd5adf16ee85c0af230ca4189be2afc0207b51efbbf7b",
+  "research_sharpe": 0.22102501399476512,
+  "walkforward_last_pick": "lb14_q0.2_u50"
+}

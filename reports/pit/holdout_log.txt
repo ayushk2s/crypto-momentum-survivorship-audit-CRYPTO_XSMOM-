@@ -1,0 +1,8 @@
+SEALED HOLDOUT 2026-03-29 -> 2026-10-21 (207 days), frozen config lb28_q0.2_u30
+  return -10.87%  Sharpe -0.33  MaxDD -36.6%  vol 38.8%
+  monthly: 2026-03: -1.9%  2026-04: -2.9%  2026-05: +11.2%  2026-06: +21.0%  2026-07: -11.6%  2026-08: -23.2%  2026-09: +6.6%  2026-10: -3.9%
+  research-implied distribution for 207 days: p5 -45.9%  median +4.8%  p95 +51.5%
+  holdout return percentile within that distribution: 25.5%
+  >> G11: PASS
+  (info) walk-forward's last pick lb14_q0.2_u50 on holdout: return -11.78% Sharpe -0.74
+  (context) BTC over holdout: +26.7%

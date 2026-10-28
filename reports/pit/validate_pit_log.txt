@@ -1,0 +1,108 @@
+Research data: 674 contracts (live+delisted), 2020-09-01 -> 2026-03-28
+Contracts ever in PIT top-30: 225; of which delisted/stopped before research end: 10
+  delisted examples: COCOSUSDT, EOSUSDT, FRONTUSDT, HNTUSDT, LUNAUSDT, MATICUSDT, RNDRUSDT, SRMUSDT, TOMOUSDT, YFIIUSDT
+
+Grid: 54 configs. Sharpe distribution: min -0.46 median 0.38 max 1.19; best = lb14_q0.3_u20
+lb14_q0.3_u20    1.19
+lb14_q0.3_u30    1.15
+lb14_q0.2_u30    1.04
+lb14_q0.1_u30    0.97
+lb14_q0.1_u20    0.93
+lb14_q0.2_u20    0.91
+lb42_q0.1_u20    0.90
+lb56_q0.1_u20    0.86
+lb42_q0.2_u20    0.84
+lb42_q0.1_u50    0.76
+lb14_q0.1_u50    0.75
+lb14_q0.2_u50    0.73
+lb42_q0.1_u30    0.72
+lb42_q0.2_u30    0.69
+lb56_q0.1_u30    0.69
+lb42_q0.3_u20    0.65
+lb56_q0.3_u20    0.56
+lb56_q0.2_u20    0.54
+lb28_q0.1_u30    0.54
+lb14_q0.3_u50    0.51
+lb42_q0.3_u30    0.49
+lb56_q0.2_u30    0.42
+lb56_q0.1_u50    0.42
+lb28_q0.2_u50    0.41
+lb56_q0.3_u30    0.41
+lb42_q0.2_u50    0.41
+lb21_q0.3_u30    0.39
+lb28_q0.3_u20    0.38
+lb28_q0.3_u50    0.37
+lb21_q0.1_u30    0.37
+lb42_q0.3_u50    0.35
+lb28_q0.1_u20    0.34
+lb21_q0.2_u50    0.32
+lb28_q0.3_u30    0.32
+lb21_q0.3_u50    0.32
+lb56_q0.3_u50    0.31
+lb21_q0.3_u20    0.28
+lb28_q0.2_u30    0.22
+lb56_q0.2_u50    0.21
+lb21_q0.1_u20    0.21
+lb21_q0.2_u30    0.17
+lb28_q0.1_u50    0.17
+lb7_q0.1_u30     0.16
+lb21_q0.1_u50    0.08
+lb7_q0.3_u30     0.03
+lb7_q0.2_u50    -0.09
+lb28_q0.2_u20   -0.12
+lb7_q0.2_u30    -0.17
+lb21_q0.2_u20   -0.20
+lb7_q0.1_u20    -0.27
+lb7_q0.2_u20    -0.34
+lb7_q0.1_u50    -0.35
+lb7_q0.3_u20    -0.38
+lb7_q0.3_u50    -0.46
+
+=== CANDIDATE lb28_q0.2_u30 (pre-registered) ===
+cagr=0.009 vol=0.381 sharpe=0.221 sortino=0.290 max_dd=-0.595 calmar=0.015 tstat=0.506 n=1913
+  >> G1 net Sharpe >= 0.70: FAIL — Sharpe 0.22, CAGR 0.9%, MaxDD -59.5%
+  >> G2 t-stat >= 2.0: FAIL — t = 0.51
+Sharpe 95% CI [-0.65, 1.09]  skew -2.35 kurt 37.5  PSR(>0) 0.691
+  >> G3 DSR(N=100) >= 0.95: FAIL — DSR 0.036 (expected max-of-100 Sharpe under null = 1.02)
+  >> G4 PBO <= 0.30: FAIL — PBO 0.45 over 12870 CSCV splits
+Walk-forward picks per quarter: ['lb14_q0.3_u20', 'lb21_q0.1_u20', 'lb28_q0.1_u20', 'lb14_q0.2_u20', 'lb7_q0.1_u20', 'lb42_q0.2_u20', 'lb14_q0.1_u30', 'lb14_q0.1_u20', 'lb14_q0.1_u20', 'lb14_q0.1_u20', 'lb21_q0.1_u30', 'lb14_q0.3_u20', 'lb14_q0.2_u50']
+Same window, pre-registered candidate Sharpe 0.03; grid median 0.58
+  >> G5 walk-forward OOS Sharpe >= 0.50: FAIL — WF OOS 2023-01→2026-03 Sharpe -0.15
+  >> G6 cost stress: FAIL — Sharpe 1x 0.22 / 2x 0.11 / 3x -0.01
+  >> G7 +1 day latency keeps >= 60%: PASS — lag0 0.22 -> lag1 0.37 (170%)
+Capacity: $100k 0.22 | $1M 0.17 | $10M 0.03 | $50M -0.18
+  >> G12 capacity ($1M drop <= 0.10): PASS — $1M Sharpe 0.17
+Without funding P&L: 0.32.  Long leg only: Sharpe 0.44 CAGR 10.2% | short leg only: Sharpe -0.29 CAGR -29.6%
+Single-weekday sleeves (the old weekday lottery): [np.float64(-0.38), np.float64(-0.26), np.float64(0.63), np.float64(0.86), np.float64(0.6), np.float64(-0.09), np.float64(0.16)] -> tranche ensemble 0.22
+Yearly: 2021: +56.9% (Sh 1.27)  2022: -16.0% (Sh -0.53)  2023: +16.6% (Sh 0.72)  2024: +10.2% (Sh 0.47)  2025: -38.8% (Sh -0.56)  2026: +1.0% (Sh 0.30)
+  >> G8 stability: FAIL — best year = 989% of log P&L; positive years 4/6
+  log P&L without best 10 days: -0.721 (total 0.046)
+  log P&L without best 20 days: -1.231 (total 0.046)
+Regime Sharpe (BTC 90d trend): {'bear': -0.51, 'chop': -0.4, 'bull': 1.33}
+Regime Sharpe (BTC 30d vol tercile): {'low': -0.61, 'mid': 0.71, 'high': 0.84}
+Correlation to BTC -0.09; beta -0.056
+  >> G9 beats random-name null: PASS — null Sharpe mean -0.78 sd 0.45; p = 0.010
+  >> G10 parameter neighbourhood: PASS — neighbours {'lb21_q0.2_u30': 0.17, 'lb42_q0.2_u30': 0.69, 'lb28_q0.1_u30': 0.54, 'lb28_q0.3_u30': 0.32, 'lb28_q0.2_u20': -0.12, 'lb28_q0.2_u50': 0.41} -> 83% >= half of candidate
+  0.5x gross: 1y median +5%  p5 -27%  P(loss) 39%  P(DD>30%) 16.0%  P(DD>50%) 0.8%
+  0.75x gross: 1y median +6%  p5 -40%  P(loss) 40%  P(DD>30%) 22.1%  P(DD>50%) 5.8%
+  1.0x gross: 1y median +7%  p5 -51%  P(loss) 42%  P(DD>30%) 35.6%  P(DD>50%) 16.5%
+  1.5x gross: 1y median +6%  p5 -71%  P(loss) 45%  P(DD>30%) 70.1%  P(DD>50%) 25.1%
+  2.0x gross: 1y median +2%  p5 -85%  P(loss) 49%  P(DD>30%) 89.9%  P(DD>50%) 42.3%
+  3.0x gross: 1y median -13%  p5 -98%  P(loss) 56%  P(DD>30%) 99.5%  P(DD>50%) 78.3%
+  >> G13 risk at chosen leverage: FAIL — max leverage with P(1y DD>30%) <= 10%: 0.0x
+  >> G14 reproducibility: PASS — max abs diff on re-run 0.0e+00; env pinned in requirements.txt
+
+=== GATE SUMMARY (research period) ===
+FAIL  G1 net Sharpe >= 0.70  |  Sharpe 0.22, CAGR 0.9%, MaxDD -59.5%
+FAIL  G2 t-stat >= 2.0  |  t = 0.51
+FAIL  G3 DSR(N=100) >= 0.95  |  DSR 0.036 (expected max-of-100 Sharpe under null = 1.02)
+FAIL  G4 PBO <= 0.30  |  PBO 0.45 over 12870 CSCV splits
+FAIL  G5 walk-forward OOS Sharpe >= 0.50  |  WF OOS 2023-01→2026-03 Sharpe -0.15
+FAIL  G6 cost stress  |  Sharpe 1x 0.22 / 2x 0.11 / 3x -0.01
+PASS  G7 +1 day latency keeps >= 60%  |  lag0 0.22 -> lag1 0.37 (170%)
+PASS  G12 capacity ($1M drop <= 0.10)  |  $1M Sharpe 0.17
+FAIL  G8 stability  |  best year = 989% of log P&L; positive years 4/6
+PASS  G9 beats random-name null  |  null Sharpe mean -0.78 sd 0.45; p = 0.010
+PASS  G10 parameter neighbourhood  |  neighbours {'lb21_q0.2_u30': 0.17, 'lb42_q0.2_u30': 0.69, 'lb28_q0.1_u30': 0.54, 'lb28_q0.3_u30': 0.32, 'lb28_q0.2_u20': -0.12, 'lb28_q0.2_u50': 0.41} -> 83% >= half of candidate
+FAIL  G13 risk at chosen leverage  |  max leverage with P(1y DD>30%) <= 10%: 0.0x
+PASS  G14 reproducibility  |  max abs diff on re-run 0.0e+00; env pinned in requirements.txt

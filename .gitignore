@@ -1,0 +1,14 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+
+# downloaded market data (regenerate with scripts/fetch_pit_futures.py)
+data_cache/
+reports/funding_rates_universe.csv
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
