@@ -59,7 +59,7 @@ Even though the strategy failed, the pipeline is reusable for any daily crypto c
 Requires Python 3.13.
 
 ```bash
-git clone [<this-repo>](https://github.com/ayushk2s/crypto-momentum-survivorship-audit-CRYPTO_XSMOM-.git) && cd CRYPTO_XSMOM
+git clone (https://github.com/ayushk2s/crypto-momentum-survivorship-audit-CRYPTO_XSMOM-.git) && cd CRYPTO_XSMOM
 python -m venv .venv
 .venv/Scripts/pip install -r requirements.txt        # Linux/macOS: .venv/bin/pip
 
